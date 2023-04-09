@@ -1,0 +1,59 @@
+---
+const { title } = Astro.props;
+
+import Head from "@components/Head/Head.jsx";
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark-theme || light-theme">
+    <Head {title}/>
+
+    <body>
+        <slot/>
+    </body>
+</html>
+
+<style is:global>
+    @import "/styles/resets.css";
+    @import "/styles/colors.css";
+    @import "/styles/fonts.css";
+
+    :root {
+        font-family: var(--font);
+        font-weight: normal;
+        font-feature-settings: "lnum";
+        color-scheme: light dark;
+
+        /* Font smoothing */
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+
+        /* Non-selectable text */
+        /* -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default; */
+    }
+
+    /* Hide scrollbar */
+    * {
+        /* Firefox */
+        /* scrollbar-width: none; */
+    }
+    body {
+        /* overscroll-behavior: none; */
+    }
+    body::-webkit-scrollbar {
+        /* display: none; */
+    }
+
+    code {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    }
+</style>
