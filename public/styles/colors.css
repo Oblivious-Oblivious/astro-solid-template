@@ -26,7 +26,6 @@
     :root {
         --fg-color: var(--night);
         --bg-color: var(--smoke);
-        --accent-color: var(--rose);
         --shadow-color: rgba(0, 0, 0, 0.1);
     }
 }
